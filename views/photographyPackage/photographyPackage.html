@@ -1,0 +1,29 @@
+<header title="摄影"></header>
+<div class="swiper-container swiper-container-tb">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <!--搜索-->
+            <div class="search">
+                <input type="text" placeholder="搜索你喜欢的产品"/>
+            </div>
+            <!--摄影预约-->
+            <h2><i></i>摄影预约</h2>
+            <div class="photographyOrder_wrapper">
+                <div infinite-scroll = 'loadMore1()' class="photographyPackage_wrapper" infinite-scroll-disabled='isBottom'>
+                    <a href="#/photographyPackageDetail/{{photographyPackage.id}}" class="photographyOrder" ng-repeat="photographyPackage in photographyPackageData">
+                        <img ng-src="images/{{photographyPackage.image}}" alt=""/>
+                        <h3>{{photographyPackage.areaName}}摄影{{photographyPackage.versionName}}</h3>
+                        <h3>套餐价格：<span>￥{{photographyPackage.price}}</span></h3>
+                    </a>
+
+                    <div ng-show="infinite_isCmp" class="waiting">正在加载...</div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <!-- Add Scroll Bar -->
+    <div class="swiper-scrollbar"></div>
+</div>
+<page-footer select-index="2"></page-footer>

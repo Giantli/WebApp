@@ -1,0 +1,66 @@
+<div class="backHeader order-header">
+    <i class="icon-left-open-big" ng-click="back();"><span>返回</span></i>
+</div>
+<div class="order-radius">
+    <div class="allOrder"  ng-click="orderFlag=0" ng-class="{'ordered': orderFlag == 0}">总订单<div class="ordered"></div></div>
+    <div class="myWedingDressOrder"  ng-click="orderFlag=1" ng-class="{'ordered': orderFlag == 1}">婚纱预订 <div></div></div>
+    <div class="myPhotographyOrder"  ng-click="orderFlag=2" ng-class="{'ordered': orderFlag == 2}">摄影预约<div></div></div>
+    <div class="finish" ng-click="orderFlag=3" ng-class="{'ordered': orderFlag == 3}">已完成<div></div></div>
+</div>
+<div class="swiper-container" style="margin-top: -90px">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide detail-container">
+
+
+            <!--主体-->
+            <div class="swiper-containerOrder1" ng-repeat="order in photographyOrdersList | orderBy:'time':'desc'" ng-show="orderFlag==0 || orderFlag == 2 || (orderFlag == 3 && {{order.state == 0}})">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide orderList photographyOrderList">
+                        <img ng-src="images/{{order.image}}" alt="">
+                        <div>
+                            <h3>{{order.area}}摄影</h3>
+                            <div>{{order.version}}</div>
+                            <div>{{order.time | date:'HH:mm:ss'}}</div>
+                            <div><i style="color:#ee590a" ng-show="{{order.state == 1}}">待服务</i>
+                                <i  ng-show="{{order.state == 0}}">已完成</i>
+                                <i ng-show="{{order.state == -1}}">已取消</i><span>￥{{order.price}}</span></div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide orderList" ng-show="{{order.state == 1}}" ng-click="cancelPhotographyOrder(order.id);">取<br>消</div>
+                    <div class="swiper-slide orderList" ng-show="{{order.state == 0}}"><div class="other">已<br>完<br>成</div></div>
+                    <div class="swiper-slide orderList" ng-show="{{order.state == -1}}" ng-click="deletePhotographyOrder(order.id);">删<br>除</div>
+                </div>
+            </div>
+
+
+
+            <div class="swiper-containerOrder" ng-repeat="order in weddingDressOrdersList | orderBy:'time':'desc'" ng-show="orderFlag==0 || orderFlag == 1 || (orderFlag == 3 && {{order.state == 0}})">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide orderList">
+                        <img ng-src="images/{{order.weddingDressImage[0]}}" alt="">
+                        <div>
+                            <h3>{{order.weddingDressName}}</h3>
+                            <div>尺码：{{order.size}}
+                                <i style="margin-left: 40px color:#ee590a" ng-show="{{order.state == 1}}">待服务</i>
+                                <i style="margin-left: 40px" ng-show="{{order.state == 0}}">已完成</i>
+                                <i style="margin-left: 40px" ng-show="{{order.state == -1}}">已取消</i>
+                            </div>
+                            <div> {{order.time}}</div>
+                            <div>数量：{{order.amount}}<span>￥{{order.amount*order.price}}</span></div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide orderList" ng-show="{{order.state == 1}}" ng-click="cancelWeddingDressOrder(order.id);">取<br>消</div>
+                    <div class="swiper-slide orderList" ng-show="{{order.state == 0}}"><div class="other">已<br>完<br>成</div></div>
+                    <div class="swiper-slide orderList" ng-show="{{order.state == -1}}" ng-click="deleteWeddingDressOrder(order.id);">删<br>除</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+

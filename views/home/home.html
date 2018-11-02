@@ -1,0 +1,99 @@
+<header title="首页"></header>
+<div class="swiper-container swiper-container-tb">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <!--轮播-->
+            <div class="ad">
+                <img src="images/banner01.jpg">
+                <img src="images/banner02.jpg">
+                <img src="images/banner03.jpg">
+
+                <div class="ad_info">
+                    <img src="images/ban01.png" width="100%" id="ad_info_img">
+                </div>
+            </div>
+            <div class="ul">
+                <ul>
+                    <li class="actived"></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+
+            <!--热门婚纱-->
+            <h2><i></i></span>热门婚纱<span ng-click="replace();">换一批</span></h2>
+            <div class="swiper-container hotDress_wrapper">
+                <div class="swiper-wrapper">
+                    <a href="#/weddingDressDetail/{{hot.id}}" class="swiper-slide hotDress" ng-repeat="hot in hotData">
+                        <img ng-src="images/{{hot.image}}" alt=""/>
+                        <h3>{{hot.name}}</h3>
+                        <h4>￥{{hot.price}}</h4>
+                    </a>
+
+                </div>
+            </div>
+
+            <!--最新旅拍-->
+            <h2><i></i>最新旅拍</h2>
+            <h3>本周新增 6张客照</h3>
+            <new-photo data="photographyData"></new-photo>
+
+            <!--新品活动-->
+            <h2><i></i>新品活动</h2>
+            <div class="text">2018.06.28顶尖设计师杰森·琳新品发布会，开场秀会场设定上海国际大厦。</div>
+            <div class="new_event">
+                <div class="new_event_left">
+                    <div class="shadow" id="actived">
+                        <div>《童话》系列</div>
+                        <div>more</div>
+                    </div>
+                    <div class="shadow">
+                        <div>《邂逅》系列</div>
+                        <div>more</div>
+                    </div>
+                    <div class="shadow">
+                        <div>《精灵》系列</div>
+                        <div>more</div>
+                    </div>
+                </div>
+                <div class="new_event_right">
+                    <img src="images/new_event_right01.png">
+                </div>
+            </div>
+
+            <!--贴士分享-->
+            <h2><i></i>贴士分享</h2>
+            <a href="#/article1" class="news_wrapper">
+                <div class="news">
+                    <img src="images/news2.jpg" alt=""/>
+                    <h3>新人必看,拍婚纱照前必须知道的事!</h3>
+                </div><p></p>
+            </a>
+            <a href="#/article2" class="news_wrapper">
+                <div  class="news">
+                    <img src="images/pic38.jpg" alt=""/>
+                    <h3>选婚纱远比你想象的累,先了解这些！</h3>
+
+                </div><p></p>
+            </a>
+            <a href="#/article3" class="news_wrapper01">
+                <img src="images/pic41.jpg" alt=""/>
+                <div  class="news01">
+                    <h3>婚纱照衣服怎么选?</h3>
+                    <p>如果给你一个机会，拍婚纱照可以自由选择服装数量，但只能拍一天，你会选多少套？我相信我们中的大部分人肯定都会做出这样的选择，“当然越多越好啦，反正多穿又不花钱！渍渍渍！就知道你会这样想！作为经验丰富的婚纱摄影小编觉得宝宝们还是先听听过来人怎么说！</p>
+                </div>
+            </a>
+            <a href="#/article4" class="news_wrapper01">
+                <img src="images/pic44.jpg" alt=""/>
+                <div  class="news01">
+                    <h3>淡旺季拍婚纱照!</h3>
+                    <p>现在正5月，不是很热也不冷，这个天气估计是不少伙伴筹划着拍婚纱照了，现在旺季拍婚纱照场景多，但是有些人会说旺季拍摄肯定会贵，那么淡季旺季拍婚纱照有哪些区别呢？淡季拍还是旺季拍呢？下面就扒一扒淡旺季拍婚纱照的各种优缺点吧。</p>
+                </div>
+            </a>
+
+        </div>
+    </div>
+    <!-- Add Scroll Bar -->
+    <div class="swiper-scrollbar"></div>
+</div>
+<page-footer select-index="0"></page-footer>

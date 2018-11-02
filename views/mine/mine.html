@@ -1,0 +1,162 @@
+<header title="我的" right-title="注册"></header>
+<div href="#/login" class="page-body" ng-show="!isShow">
+    <a href="#/login"  class="mine">
+        <div class="mine_header">
+            <img src="images/header2.png" alt=""/>
+        </div>
+        <div class="mine_name">
+            <h3>点击登录</h3>
+            <h4>Mr.Right私人定制</h4>
+        </div>
+    </a>
+
+    <div class="mine_order">
+        <a href="#/login">
+            <i class="icon-calendar-outlilne"></i>
+            <h3>总订单</h3>
+        </a>
+        <a href="#/login">
+            <i class="icon-box"></i>
+            <h3>婚纱预定</h3>
+        </a>
+        <a href="#/login">
+            <i class="icon-folder-delete"></i>
+            <h3>摄影预约</h3>
+        </a>
+        <a href="#/login">
+            <i class="icon-doc-text"></i>
+            <h3>已完成</h3>
+        </a>
+    </div>
+
+    <a href="#/login" class="mine_done"><i class="icon-trophy"></i>我的私人定制<i class="icon-right-open-big"></i></a>
+    <a href="#/login" class="mine_done"><i class="icon-mobile"></i>更换手机号<i class="icon-right-open-big"></i></a>
+    <a href="#/login" class="mine_done"><i class="icon-key"></i>修改密码<i class="icon-right-open-big"></i></a>
+    <a href="#/login" class="mine_done"><i class="icon-crown"></i>更换头像<i class="icon-right-open-big"></i></a>
+    <a href="#/login" class="mine_done"><i class="icon-fire"></i>设置昵称<i class="icon-right-open-big"></i></a>
+
+
+    <button class="logout" ng-show="isShow" ng-click="logout();">注 销</button>
+    <!--<a href="#/login" class="login" ng-show="!isShow">-->
+        <!--<i class="icon-drupal"></i>-->
+        <!--<h2>登录</h2>-->
+    <!--</a>-->
+    <!--<a class="login" ng-show="isShow">-->
+        <!--<i class="icon-drupal"></i>-->
+        <!--<h2>欢迎您</h2>-->
+    <!--</a>-->
+
+    <!--<div class="login-page" ng-show="isShow">-->
+        <!--<h3><i class="icon-tasks"></i>我的借书架 <i class="icon-right-open-big"></i></h3>-->
+        <!--<h3><i class="icon-tasks"></i>我的借阅 <i class="icon-right-open-big"></i></h3>-->
+        <!--<h3><i class="icon-tasks"></i>管理地址 <i class="icon-right-open-big"></i></h3>-->
+    <!--</div>-->
+    <!--<div class="login-info">-->
+        <!--<h3><i class="icon-tasks"></i>软件反馈 <i class="icon-right-open-big"></i></h3>-->
+        <!--<h3><i class="icon-tasks"></i>常见问题 <i class="icon-right-open-big"></i></h3>-->
+        <!--<h3><i class="icon-tasks"></i>关于 <i class="icon-right-open-big"></i></h3>-->
+    <!--</div>-->
+
+    <!--<button class="logout" ng-show="isShow" ng-click="logout();">注 销</button>-->
+</div>
+
+
+<div class="page-body" ng-show="isShow">
+    <div ng-show="isShow" class="mine">
+        <div class="mine_header">
+            <img src="images/header2.png" alt=""/>
+        </div>
+        <div class="mine_name">
+            <h3>{{user.nickname}}</h3>
+            <h4>Mr.Right私人定制</h4>
+        </div>
+    </div>
+
+    <div class="mine_order">
+        <a href="#/myOrders/0">
+            <i class="icon-calendar-outlilne"></i>
+            <h3>总订单</h3>
+        </a>
+        <a href="#/myOrders/1">
+            <i class="icon-box"></i>
+            <h3>婚纱预定</h3>
+        </a>
+        <a href="#/myOrders/2">
+            <i class="icon-folder-delete"></i>
+            <h3>摄影预约</h3>
+        </a>
+        <a href="#/myOrders/3">
+            <i class="icon-doc-text"></i>
+            <h3>已完成</h3>
+        </a>
+    </div>
+
+    <a href="#/myOrders/0" class="mine_done"><i class="icon-trophy"></i>我的私人定制<i class="icon-right-open-big"></i></a>
+    <div class="mine_done"  ng-click="edit($event);"><i class="icon-mobile"></i>更换手机号<i class="icon-right-open-big"></i></div>
+    <div class="mine_done" ng-click="editPassword();"><i class="icon-key"></i>修改密码<i class="icon-right-open-big"></i></div>
+    <div class="mine_done"><i class="icon-crown"></i>更换头像<i class="icon-right-open-big"></i></div>
+    <div class="mine_done" ng-click="editNickname();"><i class="icon-fire"></i>设置昵称<i class="icon-right-open-big"></i></div>
+
+
+    <button class="logout" ng-show="isShow" ng-click="logout();">注 销</button>
+    <!--<a href="#/login" class="login" ng-show="!isShow">-->
+    <!--<i class="icon-drupal"></i>-->
+    <!--<h2>登录</h2>-->
+    <!--</a>-->
+    <!--<a class="login" ng-show="isShow">-->
+    <!--<i class="icon-drupal"></i>-->
+    <!--<h2>欢迎您</h2>-->
+    <!--</a>-->
+
+    <!--<div class="login-page" ng-show="isShow">-->
+    <!--<h3><i class="icon-tasks"></i>我的借书架 <i class="icon-right-open-big"></i></h3>-->
+    <!--<h3><i class="icon-tasks"></i>我的借阅 <i class="icon-right-open-big"></i></h3>-->
+    <!--<h3><i class="icon-tasks"></i>管理地址 <i class="icon-right-open-big"></i></h3>-->
+    <!--</div>-->
+    <!--<div class="login-info">-->
+    <!--<h3><i class="icon-tasks"></i>软件反馈 <i class="icon-right-open-big"></i></h3>-->
+    <!--<h3><i class="icon-tasks"></i>常见问题 <i class="icon-right-open-big"></i></h3>-->
+    <!--<h3><i class="icon-tasks"></i>关于 <i class="icon-right-open-big"></i></h3>-->
+    <!--</div>-->
+
+    <!--<button class="logout" ng-show="isShow" ng-click="logout();">注 销</button>-->
+</div>
+<page-footer select-index="4"></page-footer>
+
+
+<div class="editPhone">
+    <div class="backHeader">修改手机号
+        <div ng-click="cancel();">取消</div>
+        <div ng-click="savePhone();">完成</div>
+    </div>
+    <div class="ipt">
+        <i class="icon-mobile"></i>
+        <input type="tel" id="ipt"/>
+    </div>
+</div>
+
+<div class="editNickname">
+    <div class="backHeader">修改昵称
+        <div ng-click="cancel();">取消</div>
+        <div ng-click="saveNickname();">完成</div>
+    </div>
+    <div class="ipt">
+        <i class="icon-fire"></i>
+        <input type="text" id="nickname"/>
+    </div>
+</div>
+
+<div class="editPassword">
+    <div class="backHeader">修改密码
+        <div ng-click="cancel();">取消</div>
+        <div ng-click="savePassword();">完成</div>
+    </div>
+    <div class="ipt">
+        旧密码：
+        <input type="password" id="oldPassword"/>
+    </div>
+    <div class="ipt">
+        新密码：
+        <input type="password" id="newPassword"/>
+    </div>
+</div>

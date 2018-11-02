@@ -1,0 +1,83 @@
+<div class="items">
+    <!--<div class="detail">
+    <back-header callback="clickBack();"></back-header>
+
+        <img ng-src="images/{{weddingDressData.images[1]}}" width="100%" id="btn" alt=""/>
+
+    <div class="radius">
+        <div class="goods-name">{{weddingDressData.name}}</div>
+        <div class="goods-style">款式：{{weddingDressData.styleName}}</div>
+        <div class="goods-pendulum">摆型：{{weddingDressData.pendulumName}}
+            <span class="goods-price">￥{{weddingDressData.price}}</span>
+        </div>
+    </div>
+
+    </div>-->
+    <back-header callback="clickBack();"></back-header>
+    <div class="weddingDress-radius">
+        <img ng-src="images/{{weddingDressData.images[0]}}" id="btn" alt=""/>
+        <div>
+            <div class="goods-name">{{weddingDressData.name}}</div>
+            <div class="goods-style">款式：{{weddingDressData.styleName}}</div>
+            <div class="goods-pendulum">摆型：{{weddingDressData.pendulumName}}</div>
+            <div class="goods_price">￥{{weddingDressData.price}}</div>
+        </div>
+    </div>
+<div class="swiper-container" style="margin-top: -180px">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide detail-container">
+            <!--主体-->
+
+            <h2 class="detailH">热门推荐<span ng-click="replace();">换一批</span></h2>
+            <div class="swiper-container hotDress_wrapper">
+                <div class="swiper-wrapper">
+                    <a href="#/weddingDressDetail/{{hot.id}}" class="swiper-slide hotDress" ng-repeat="hot in hotData">
+                        <img ng-src="images/{{hot.image}}" alt=""/>
+                        <h3>{{hot.name}}</h3>
+                    </a>
+                </div>
+            </div>
+
+            <h2 class="detailH1">商品详情</h2>
+            <div class="img">
+                <div class="goods-detail" ng-repeat="img in weddingDressImages" >
+                    <img ng-src="images/{{img}}" alt=""/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="detail-footer">
+    <div class="myCart" ng-click="showChose();">前往预定</div>
+    <div class="book"  id="cart" ng-click="isLogin();">我的预定架</div>
+</div>
+
+    <div class="none" ng-click="cancelChose();"></div>
+    <div class="chose">
+        <div class="x" ng-click="cancelChose();"><span>+</span></div>
+        <div class="chose-goods">
+            <img ng-src="images/{{weddingDressData.images[0]}}" alt=""/>
+            <div>
+                <div class="chose-name">{{weddingDressData.name}}</div>
+                <div class="chose-price">￥{{weddingDressData.price}}</div>
+            </div>
+        </div>
+
+        <h2 class="detailH">选择尺码</h2>
+        <chose chose-index="0"></chose>
+
+
+        <h2 class="detailH">选择数量</h2>
+        <div class="chose-num">
+            <div class="min" ng-click="min();">-</div>
+            <input class="num" type="number" ng-model="num">
+            <div class="add" ng-click="add();">+</div>
+        </div>
+        <div class="detail-footer">
+            <div id="my-btn" ng-click="disable || weddingDressOrder();">立即预定</div>
+            <div class="book" ng-click="isLogin();">我的预定架</div>
+        </div>
+    </div>
+
+</div>

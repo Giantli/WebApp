@@ -1,0 +1,62 @@
+<back-header right-title="注册" callback="clickBack();"></back-header>
+<div class="login-wrapper">
+    <div class="login_header">
+        <img src="images/header2.png" alt=""/>
+    </div>
+    <h3>Mr.Right</h3>
+    <h4>一生正确的选择</h4>
+
+    <form name="frm" id="frm" novalidate ng-submit="login();">
+        <div class="login_phone">
+            <i class="icon-mobile"></i>
+            <input type="tel" placeholder="请输入你的手机号" ng-focus="focus=true" ng-blur="focus=false" name="phone" ng-model="user.phone" required pattern="1[3578]\d{9}"/>
+        </div>
+        <div class="alertMessage">
+            <span ng-show="frm.phone.$pristine && !notValid || focus">手机号以18、13、15、17开头</span>
+            <span class="alert-danger" ng-show="(frm.phone.$dirty || notValid) && frm.phone.$error.required && !focus">手机号不能为空</span>
+            <span class="alert-danger" ng-show="(frm.phone.$dirty || notValid) && frm.phone.$error.pattern  && !focus">手机号格式不正确</span>
+        </div>
+
+
+        <div class="login_phone">
+            <i class="icon-key"></i>
+            <input type="password" placeholder="请输入密码" ng-focus="focusPassword=true" ng-blur="focusPassword=false" name="password" ng-model="user.password" required pattern="\S{6,12}"/>
+        </div>
+        <div class="alertMessage">
+            <span ng-show="frm.password.$pristine && !notValid || focusPassword">密码为6-12位的非空白字符</span>
+            <span class="alert-danger" ng-show="(frm.password.$dirty || notValid) && frm.password.$error.required && !focusPassword">密码不能为空</span>
+            <span class="alert-danger" ng-show="(frm.password.$dirty || notValid) && frm.password.$error.pattern && !focusPassword">密码格式不正确</span>
+            <span class="alert-danger" ng-show="notLogin && !focus && !focusPassword">密码或手机号不正确</span>
+        </div>
+        <!--<div class="alertMessage" style="margin-top: -10px;">
+            <span class="alert-danger" ng-show="notLogin && !focus && !focusPassword">密码或手机号不正确</span>
+        </div>-->
+        <button>登陆</button>
+    </form>
+
+    <!--<form name="frm" novalidate ng-submit="login()">
+        <div class="login-div">
+            <i class="icon-user-1"></i>
+            <input type="text" placeholder="请输入手机号" name="phone" ng-model="user.phone" required pattern="1[3578]\d{9}"/>
+        </div>
+        <div class="alertMessage">
+            <span ng-show="frm.phone.$pristine && !notValid">手机号以18、13、15、17开头的11位数字</span>
+            <span class="alert-danger" ng-show="(frm.phone.$dirty || notValid) && frm.phone.$error.required">手机号不能为空</span>
+            <span class="alert-danger" ng-show="(frm.phone.$dirty || notValid) && frm.phone.$error.pattern">手机号格式不正确</span>
+        </div>
+
+        <div class="login-div">
+            <i class="icon-lock"></i>
+            <input type="password" placeholder="请输入密码" name="password" ng-model="user.password" required pattern="\S{6,12}"/>
+        </div>
+        <div class="alertMessage">
+            <span ng-show="frm.password.$pristine && !notValid">密码为6-12位的非空白字符</span>
+            <span class="alert-danger" ng-show="(frm.password.$dirty || notValid) && frm.password.$error.required">密码不能为空</span>
+            <span class="alert-danger" ng-show="(frm.password.$dirty || notValid) && frm.password.$error.pattern">密码格式不正确</span>
+        </div>
+
+
+        <button>登 录</button>
+    </form>-->
+
+</div>

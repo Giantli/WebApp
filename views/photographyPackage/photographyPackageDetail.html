@@ -1,0 +1,67 @@
+<div class="items">
+    <div class="detail">
+        <back-header callback="clickBack();"></back-header>
+
+        <img ng-src="images/{{photographyPackageData.image}}" width="100%" id="btn" alt=""/>
+
+        <div class="radius">
+            <div class="goods-name">{{photographyPackageData.name}}</div>
+            <div class="goods-style">地区：{{photographyPackageData.areaName}}</div>
+            <div class="goods-pendulum">套餐类别：{{photographyPackageData.versionName}}
+                <span class="goods-price">￥{{photographyPackageData.price}}</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="swiper-container" style="margin-top: 0">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide detail-container" style="margin-top: 11.2rem">
+                <!--主体-->
+
+                <h2 class="detailH">热门写真<span ng-click="replace();">换一批</span></h2>
+                <div class="swiper-container hotDress_wrapper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide hotDress" ng-repeat="img in photographyData" style="width: 8rem">
+                            <img ng-src="images/{{img}}" alt=""/>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="detail-footer">
+        <div class="myCart" ng-click="showChose();">前往预定</div>
+        <div ng-click="isLogin();" class="book"  id="cart">我的预定架</div>
+    </div>
+
+    <div class="none" ng-click="cancelChose();"></div>
+    <div class="chose">
+        <div class="x" ng-click="cancelChose();"><span>+</span></div>
+        <div class="chose-goods">
+            <img ng-src="images/{{photographyPackageData.image}}" alt=""/>
+            <div>
+                <div class="chose-name">{{photographyPackageData.name}}</div>
+                <div class="chose-price">￥{{photographyPackageData.price}}</div>
+            </div>
+        </div>
+
+        <h2 class="detailH">确认套餐地区</h2>
+        <div class="chose-size package">
+            {{photographyPackageData.areaName}}
+        </div>
+
+
+        <h2 class="detailH">确认套餐类别</h2>
+        <div class="chose-size package">
+            {{photographyPackageData.versionName}}
+        </div>
+        <div class="detail-footer">
+            <div id="my-btn" ng-click="disable || photoPackageOrder();">立即预定</div>
+            <div ng-click="isLogin();" class="book">我的预定架</div>
+        </div>
+    </div>
+
+</div>

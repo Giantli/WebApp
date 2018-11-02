@@ -1,0 +1,37 @@
+<header title="婚纱"></header>
+<div class="swiper-container">
+<div class="swiper-wrapper">
+<div class="swiper-slide">
+    <!--搜索-->
+    <div class="search">
+        <input type="text" placeholder="搜索你喜欢的产品"/>
+    </div>
+    <!--婚纱-->
+    <h2><i></i>婚纱预定<span>筛选</span></h2>
+    <div class="wai">
+    <div class="weddingDress_wrapper">
+        <div infinite-scroll = 'loadMore()' infinite-scroll-disabled='isBottom'>
+            <a href="#/weddingDressDetail/{{weddingDress.id}}" class="weddingDress" ng-repeat="weddingDress in weddingDressData">
+                <img ng-src="images/{{weddingDress.images[0]}}" alt=""/>
+                <div>
+                    <h3>{{weddingDress.name}}</h3>
+                    <div class="dress_style">婚纱款型：{{weddingDress.pendulumName}}</div>
+                    <div class="dress_pendulum">婚纱摆型：{{weddingDress.styleName}}</div>
+                    <div class="dress_price">价格：<span>￥{{weddingDress.price}}</span></div>
+                </div>
+            </a>
+
+            <div ng-show="infinite_isCmp" class="waiting">正在加载...</div>
+        </div>
+
+    </div>
+    </div>
+
+</div>
+</div>
+<div class="swiper-pagination"></div>
+<!-- Add Scroll Bar -->
+<div class="swiper-scrollbar"></div>
+</div>
+
+<page-footer select-index="1"></page-footer>

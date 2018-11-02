@@ -1,0 +1,23 @@
+<header title="写真"></header>
+<div class="swiper-container swiper-container-tb">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <!--旅拍写真-->
+            <h2><i></i>旅拍写真</h2>
+            <div class="swiper-container swiper-container-lr">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" ng-repeat="area in areasData" ng-class="{'swiper-slide-actived': photography.areaId == {{$index + 1}}}" ng-click="changeArea();">{{area.name}}</div>
+                </div>
+            </div>
+
+            <div class="photography" ng-repeat="photography in photographyData[0].image">
+                <img ng-src="images/{{photography}}" alt=""/>
+            </div>
+
+
+        </div>
+    </div>
+    <!-- Add Scroll Bar -->
+    <div class="swiper-scrollbar"></div>
+</div>
+<page-footer select-index="3"></page-footer>
