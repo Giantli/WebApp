@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+    <title></title>
+    <link rel="stylesheet" href="lib/css/swiper.min.css"/>
+    <link rel="stylesheet" href="lib/css/reply.css"/>
+    <link rel="stylesheet" href="css/app.css"/>
+    <link rel="stylesheet" href="css/home.css"/>
+    <link rel="stylesheet" href="css/weddingDress.css"/>
+    <link rel="stylesheet" href="css/photographyOrder.css"/>
+    <link rel="stylesheet" href="css/photography.css"/>
+    <link rel="stylesheet" href="css/mine.css"/>
+    <link rel="stylesheet" href="css/articles.css"/>
+    <link rel="stylesheet" href="css/detail.css"/>
+    <link rel="stylesheet" href="css/myOrders.css">
+    <style>
+        .header {
+            position: fixed;
+            top: 0;
+            width: 12rem;
+            padding-left: .5rem;
+            margin: auto;
+            line-height: 56px;
+            background-color: white;
+            font-size: 32px;
+            font-weight: 600;
+            z-index: 10;
+        }
+        .page-footer{
+            display: flex;
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 48px;
+            background-color: white;
+            z-index: 10;
+            box-shadow: 0 1px 3px #B88628;
+        }
+
+        .swiper-container {
+            margin-top: 46px;
+            margin-bottom: 46px;
+            list-style: none;
+            z-index: 1;
+        }
+    </style>
+
+</head>
+    <body>
+
+    <div ng-view></div>
+
+
+    <script src="js/initialize.js"></script>
+    <script src="lib/js/jquery.min.js"></script>
+    <script src="lib/js/swiper.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+        var swiper = new Swiper('.swiper-container', {
+            direction: 'vertical',
+            slidesPerView: 'auto',
+            freeMode: true,
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+            mousewheel: true,
+            observer:true,//修改swiper自己或子元素时，自动初始化swiper
+            observeParents:true,//修改swiper的父元素时，自动初始化swiper
+        });
+
+            //加入购物车初始化
+            $('.items').flyto({
+                item      : '#btn',
+                target    : '#cart',
+                button    : '#my-btn'
+            });
+    })
+
+    </script>
+
+    <script src="lib/js/angular.min.js"></script>
+    <script src="lib/js/angular-route.min.js"></script>
+    <script src="lib/js/ng-infinite-scroll.js"></script>
+
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/directives.js"></script>
+    <script src="js/app.js"></script>
+
+    <script src="lib/js/jquery-ui.js"></script>
+    <script src="lib/js/flyto.js"></script>
+
+</body>
+</html>
