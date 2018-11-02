@@ -1,0 +1,66 @@
+.search{
+    width: 11rem;
+    height: 36px;
+    border-radius: 18px;
+    background-color: #f0f0f0;
+}
+.search>input{
+    width: 9rem;
+    margin-top: 2px;
+    margin-left: 19px;
+    line-height: 26px;
+    background-color: #f0f0f0;
+    color: #B88628;
+}
+.search>input::-webkit-input-placeholder{
+    color: #B88628;
+}
+/*»éÉ´Ô¤¶¨*/
+.weddingDress_wrapper{
+    width: 11rem;
+    margin: auto;
+}
+.weddingDress{
+    display: block;
+    width: 100%;
+    height: 4.2rem;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    background-color: #f6f6f6;
+}
+.weddingDress>div{
+    display: inline-block;
+    width: 7rem;
+    margin-left: 20px;
+}
+.weddingDress>div>h3{
+    line-height: 1.2rem;
+    font-size: 18px;
+    font-weight: 600;
+}
+.dress_style , .dress_pendulum {
+    line-height: 1rem;
+    font-size: 16px;
+}
+.dress_price{
+    line-height: 1rem;
+    font-size: 16px;
+}
+.dress_price>span{
+    color: #ee590a;
+    font-weight: 600;
+}
+.weddingDress>img{
+    float: left;
+    display: block;
+    width: 3rem;
+    height: 4.2rem;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.waiting{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 13px;
+}

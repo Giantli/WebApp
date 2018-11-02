@@ -1,0 +1,24 @@
+.txt-container{
+    width: 11rem;
+    margin: auto;
+}
+.txt-title{
+    margin-bottom: 10px;
+    line-height: 28px;
+    font-size: 20px;
+    font-weight: 800;
+    color: #ee590a;
+}
+.txt-container>p{
+    margin-bottom: 15px;
+    line-height: 24px;
+    text-indent: 32px;
+    text-align: justify;
+    font-size: 15px;
+}
+.txt-container>img{
+    display: block;
+    margin-bottom: 15px;
+    width: 11rem;
+    border-radius: 10px;
+}

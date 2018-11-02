@@ -1,0 +1,47 @@
+/*摄影预约*/
+.photographyOrder_wrapper{
+    width: 11rem;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.photographyOrder{
+    width: 5.4rem;
+    margin-bottom: 15px;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+}
+.photographyPackage_wrapper{
+    width: 11rem;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.photographyOrder>img{
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.photographyOrder>h3:nth-child(2){
+    margin-left: 5px;
+    margin-top: 5px;
+    height: 30px;
+    font-size: 17px;
+    font-weight: 600;
+}
+.photographyOrder>h3:last-child{
+    margin-left: 5px;
+    margin-bottom: 10px;
+}
+.photographyOrder>h3>span{
+    color: #ee590a;
+    font-weight: 600;
+}
+
+.waiting{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 13px;
+}

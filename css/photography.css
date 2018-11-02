@@ -1,0 +1,48 @@
+.photography_menus{
+    width: 11rem;
+    height: 30px;
+    margin: auto;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    overflow: hidden;
+    overflow-x: auto;
+}
+.swiper-slide-actived{
+    background-color:#ee590a !important;
+    color:#fff;
+}
+.photography_menus>div{
+    display: inline-block;
+    width: 2rem;
+    height: 30px;
+    line-height: 28px;
+    text-align: center;
+    border-radius: 0 0 15px 15px;
+    background-color: #f0f0f0;
+    font-size: 13px;
+}
+.photography>img{
+    display: block;
+    width: 11rem;
+    margin: 0 auto 8px;
+    border-radius: 15px;
+}
+
+.swiper-container-lr{
+    margin: 0 .5rem;
+    margin-top: -1px !important;
+    margin-bottom: 15px !important;
+    height: 40px;
+}
+.swiper-container-lr>.swiper-wrapper>.swiper-slide{
+    width: 2rem;
+    height: 30px;
+    line-height: 28px;
+    text-align: center;
+    border-radius: 0 0 15px 15px;
+    background-color: #f0f0f0;
+    font-size: 13px;
+    margin-top: 8px;
+}

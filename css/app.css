@@ -1,0 +1,526 @@
+﻿/*****************初始化*********************/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, /*hgroup,*/
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, /*hgroup,*/ menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+@font-face{
+    font-family: '苹方';
+    src: url('../lib/css/PingFangRegular.ttf');
+}
+
+body {
+    font-size: 15px;
+    font-family: '苹方';
+    color: #000;
+}
+/****************主页*****************/
+/*头部*/
+.page-header{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    background: #179AF4;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.page-header .icon-reply{
+    position: absolute;
+    left: 0.5rem;
+    top:0;
+}
+
+/*搜索*/
+.search{
+    width: 9rem;
+    height: 28px;
+    line-height: 24px;
+    margin: 10px auto;
+    text-align: left;
+    background-color: #fff;
+}
+.search>i{
+    margin-left: 0.3rem;
+    color: #179AF4;
+}
+.search>input{
+    border: none;
+    outline: none;
+}
+
+/*导航*/
+.page-footer , .details-footer{
+    display: flex;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 48px;
+    /*border-top: 1px solid #cccccc;*/
+    box-shadow: 0 1px 3px #B88628;
+}
+.page-footer>a{
+    flex: 1;
+    padding-top: 5px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 11px;
+}
+.page-footer>a.actived{
+    color: #B88628;
+}
+.page-footer>a>i{
+    display: block;
+    line-height: 24px;
+    font-size: 16px
+}
+.icon-diamond{
+    margin-left: -3px;
+}
+.icon-ravelry{
+    margin-left: -7px;
+}
+
+/*主体*/
+.page-body  , .book-details , .login-wrapper{
+    position: absolute;
+    top: 48px;
+    left: 0;
+    right: 0;
+    bottom: 48px;
+    margin: auto;
+    overflow: hidden;
+    overflow-y: auto;
+}
+/*导航*/
+.ad>img{
+    display: block;
+    width: 100%;
+}
+
+/*新书上架*/
+.book-grid>a:first-child>h2{
+    height: 40px;
+    padding: 0 6px;
+    line-height: 40px;
+    color: #666;
+    font-size: 16px;
+    font-weight: 600;
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+}
+.book-grid>a:first-child>h2>i{
+    float: right;
+}
+
+.book-grid>a:last-child{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+}
+.grid-cell{
+    width: 6rem;
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.grid-cell:nth-child(2n+1){
+    border-right: 1px solid #ccc;
+}
+
+.grid-cell>img{
+    display: block;
+    margin: 0 auto;
+    width: 80px;
+    height: 110px;
+    padding-top: 10px;
+}
+.grid-cell>h2{
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    overflow: hidden;
+    color: #666;
+}
+
+/********图书列表*********/
+.book-list-wrapper{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 48px;
+    bottom: 0;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.book-list{
+    display: flex;
+    margin: 0 0.5rem;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid #ccc;
+    color: #666;
+}
+.book-list-left{
+    flex: 1.5;
+}
+.book-list-right{
+    flex: 3;
+}
+
+.book-list-left>img{
+    display: block;
+    width: 70%;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.book-list-right>h2{
+    line-height: 30px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.book-list-right>h3{
+    line-height: 24px;
+    color: #666;
+}
+.book-list>i{
+    margin: auto;
+    color: #999;
+}
+
+/**********图书详情***********/
+.book-details>img{
+    display: block;
+    width: 6rem;
+    height: 7rem;
+    margin: 0.5rem auto;
+}
+.book-details>h2{
+    height: 38px;
+    line-height: 38px;
+    padding-left: 0.5rem;
+    margin-top: 0.5rem;
+    font-size: 17px;
+    color: #666;
+    background-color: #f6f6f6;
+    font-weight: 600;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.book-details>h3{
+    height: 32px;
+    line-height: 32px;
+    padding-left: 0.5rem;
+}
+.book-details>h3>span:first-child{
+    display: inline-block;
+    width: 80px;
+    color: #888;
+}
+.book-details>h3>span:last-child{
+    color: #555;
+}
+.book-details>div{
+    padding: 10px 0.5rem;
+    text-indent: 28px;
+    color: #666;
+    line-height: 28px;
+}
+.details-footer{
+    border-top: 1px solid #009AF0;
+}
+.details-footer>div{
+    display: inline-block;
+    width: 6rem;
+    line-height: 48px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.details-footer>div:first-child{
+    padding-left: 0.5rem;
+    color: #009AF0;
+}
+.details-footer>div:last-child{
+    text-align: center;
+    background-color: #009AF0;
+    color: #fff;
+}
+
+/**********个人中心***********/
+/*登录*/
+.login{
+    border-bottom: 1px solid #ccc;
+    color: #0099ff;
+    text-align: center;
+    padding: 0.3rem 0;
+    margin-bottom: 0.5rem;
+}
+.login>i{
+    display: block;
+    font-size: 88px;
+}
+.login>h3{
+    line-height: 32px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.login-page , .login-info{
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 0 0.5rem;
+    color: #666666;
+    font-size: 16px;
+    margin-top: 0.5rem;
+}
+.login-page>h3 , .login-info>h3{
+    line-height: 42px;
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+}
+.login-page>h3>i:last-child , .login-info>h3>i:last-child{
+    float: right;
+}
+.login-page>h3:last-child ,  .login-info>h3:last-child{
+    border: none;
+}
+/*注销*/
+.logout{
+    display: block;
+    width: 10.5rem;
+    height: 36px;
+    line-height: 36px;
+    margin: 0.4rem auto;
+    border: none;
+    background-color: #179AF4;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/*登录界面*/
+.login-wrapper>form{
+    margin: 0 0.5rem;
+    padding-top: 1rem;
+}
+.login-div{
+    height: 36px;
+    line-height: 36px;
+    /*margin-top: 0.4rem;*/
+    font-size: 16px;
+    color: #666;
+    border-bottom: 1px solid #0070f4;
+}
+.login-div>input{
+    border: none;
+    outline: none;
+}
+.alertMessage{
+    height: 18px;
+    line-height: 18px;
+    color: #999;
+}
+.alert-danger{
+    color: #ff0000;
+}
+.login-wrapper button{
+    width: 10.5rem;
+    height: 36px;
+    line-height: 36px;
+    margin: 1rem auto;
+    border: none;
+    background-color: #179AF4;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    /*outline: none;*/
+}
+
+
+
+
+/* 轮播 */
+.ad{
+    width: 11rem;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.ad>img{
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    /*height: 100%;*/
+}
+.ad>img:not(:first-child){
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    transform: translate(100% , 0);
+}
+.showImg{
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    transform: translate(0 , 0);
+}
+/******************************/
+.ad>img.inLeft{
+    animation: inLeft 0.8s both;
+}
+.ad>img.outLeft{
+    animation: outLeft 0.8s both;
+}
+.ad>img.inRight{
+    animation: inRight 0.8s both;
+}
+.ad>img.outRight{
+    animation: outRight 0.8s both;
+}
+@keyframes inLeft{
+    from{transform: translate(-100% , 0)}
+    to{transform: translate(0 , 0)}
+}
+@keyframes outLeft{
+    from{transform: translate(0 , 0)}
+    to{transform: translate(-100% , 0)}
+}
+@keyframes inRight{
+    from{transform: translate(100% , 0)}
+    to{transform: translate(0 , 0)}
+}
+@keyframes outRight{
+    from{transform: translate(0 , 0)}
+    to{transform: translate(100% , 0)}
+}
+
+.leftAd , .rightAd{
+    position: absolute;
+    top: 50%;
+    margin-top: -54px;
+    /*padding-top: 13%;*/
+    text-align: center;
+    color: #fff;
+    font-size: 68px;
+    font-weight: 900;
+    cursor: pointer;
+    /*background:rgba(0,0,0,0.8);*/
+    z-index: 15;
+}
+/*.ad i{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}*/
+.leftAd{
+    left: 0;
+    padding: 20px 15px 20px 10px;
+    /*background: -webkit-linear-gradient(left , rgba(0,0,0,0.5) , rgba(0,0,0,0));*/
+}
+.rightAd{
+    right: 0;
+    padding: 20px 10px 20px 15px;
+    /*background: -webkit-linear-gradient(left , rgba(0,0,0,0) , rgba(0,0,0,0.5) );*/
+}
+.ad>ul{
+    list-style: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -10px;
+    height: 10%;
+    text-align: center;
+    font-size: 0;
+}
+.ul{
+    position: relative;
+    text-align: center;
+}
+.ul>ul>li{
+    width: 6px;
+    height: 6px;
+    border: 1px solid #B88628;
+    border-radius: 50%;
+    margin-right: 8px;
+    margin-top: 10px;
+    /*border: 2px solid #f0f0f0;*/
+    display: inline-block;
+    text-align: center;
+    /*cursor: pointer;*/
+}
+.ul>ul>li.actived{
+    background-color: #B88628;
+}
+
+.ad_info{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 38.5%;
+    background: rgba(255,255,255,0.6);
+    z-index: 10;
+}
+.ad_info>img{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+}
+
